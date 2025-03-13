@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Создайте анкету тиммейта на TeamFinder">
+    <title>TeamFinder - Создание анкеты</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-container">
+        <div class="container">
+            <div class="logo">
+                <img src="img/img2900.png" alt="" class="">
+            </div>
+            <nav class="nav-container">
+        </div>
+    </header>
+
+    <section class="form-container">
+        <div class="container">
+            <h2>Создание анкеты тиммейта</h2>
+            <form id="profileForm" class="profile-form">
+                <div class="form-group">
+                    <label for="game">Игра</label>
+                    <select id="game" name="game" required>
+                        <option value="">Все игры</option>
+                    <option value="cs">CS2</option>
+                    <option value="dota">Dota 2</option>
+                    <option value="valorant">Fortnite</option>
+                    <option value="valorant">Apex Legends</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Роль</label>
+                    <select id="role" name="role" required>
+                        <option value="fragger">Fragger</option>
+                        <option value="support">Support</option>
+                        <option value="support">Igl</option>
+                        <option value="support">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="wins">Количество побед(необязательно)</label>
+                    <input type="" id="" name="" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="platform">Платформа</label>
+                    <select id="platform" name="platform" required>
+                        <option value="pc">ПК</option>
+                        <option value="ps">PlayStation</option>
+                        <option value="xbox">Xbox</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="teamSize">Сколько людей требуется</label>
+                    <select id="teamSize" name="teamSize" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tournament">Тип турнира</label>
+                    <select id="tournament" name="tournament" required>
+                        <option value="fortnite-lcq">Fortnite Last Chance Qualifier</option>
+                        <option value="other">Другой турнир</option>
+                    </select>
+                </div>
+                <button onclick="searchTeammates()">Найти тиммейтов</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-container">
+        <div class="container">
+            <p>© 2025 TeamFinder. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        if (window.fetch) {
+            loadScriptAsync("https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js");
+        }
+
+        function loadScriptAsync(src) {
+            const script = document.createElement("script");
+            script.src = src;
+            script.async = true;
+            document.head.appendChild(script);
+        }
+
+        function setCookie(name, value, days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + date.toGMTString();
+            document.cookie = name + "=" + value + "; " + expires + "; path=/";
+        }
+
+        window.onload = function() {
+            setCookie("userVisited", "true", 30);
+        };
+
+        // Обработка формы
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const profile = {};
+            formData.forEach((value, key) => {
+                if (key === 'devices') {
+                    profile[key] = formData.getAll('devices').join(', ');
+                } else {
+                    profile[key] = value;
+                }
+            });
+            console.log('Созданная анкета:', profile);
+            alert('Анкета успешно создана! Данные отправлены (см. консоль).');
+            this.reset();
+        });
+    </script>
+
+    <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        if (typeof window.gtag === 'undefined') {
+            document.write('<script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"><\/script>');
+        }
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

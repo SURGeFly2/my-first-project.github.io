@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TeamFinder - Найди идеальных тиммейтов для ваших любимых игр. Создайте команду и достигайте новых высот!">
+    <title>TeamFinder - Найди свою команду</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet"> <!-- Шрифт для кнопки -->
+</head>
+<body>
+    <header class="header-container">
+        <div class="container">
+            <div class="logo">
+                <img src="img/img999.png" alt="TeamFinder Logo" class="logo-img">
+            </div>
+            <nav class="nav-container">
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#search">Поиск</a></li>
+                    <li><a href="#about">О нас</a></li>
+                </ul>
+            </nav>
+            <div class="game-bar">
+                <div class="game-item" data-game="cs">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="game-icon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/>
+                    </svg>
+                    CS2
+                </div>
+                <div class="game-item" data-game="dota">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="game-icon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/>
+                    </svg>
+                    Dota 2
+                </div>
+                <div class="game-item" data-game="valorant">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="game-icon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/>
+                    </svg>
+                    Valorant
+                </div>
+                <div class="game-item" data-game="fortnite">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="game-icon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/>
+                    </svg>
+                    Fortnite
+                </div>
+                <div class="game-item" data-game="apex">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="game-icon">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/>
+                    </svg>
+                    Apex Legends
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-container" id="home">
+        <div class="container">
+            <h1>TEAMFINDER</h1>
+            <h2>Найди идеальных тиммейтов для победы</h2>
+            <p>Создай свою команду для любимых игр</p>
+            <div class="wrap">
+                <button class="button" onclick="window.location.href='pages/create-profile.html'">Начать поиск</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-container" id="search">
+        <div class="container">
+            <h2>Поиск тиммейтов</h2>
+            <div class="search-form-container">
+                <input type="text" id="searchInput" placeholder="Поиск по навыкам или описанию">
+                <select id="gameSelect">
+                    <option value="">Все игры</option>
+                    <option value="cs">CS2</option>
+                    <option value="dota">Dota 2</option>
+                    <option value="valorant">Valorant</option>
+                </select>
+                <select id="skillSelect">
+                    <option value="">Все уровни</option>
+                    <option value="beginner">Новичок</option>
+                    <option value="intermediate">Средний</option>
+                    <option value="pro">Профессионал</option>
+                </select>
+                <button onclick="searchTeammates()">Найти тиммейтов</button>
+            </div>
+            <div class="results-container" id="results"></div>
+        </div>
+    </section>
+
+    <section class="about-container" id="about">
+        <div class="container">
+            <h2>О TeamFinder</h2>
+            <p>Мы помогаем геймерам находить единомышленников для совместной игры и достижения новых высот. Регистрируйся и начни играть с сильной командой!</p>
+        </div>
+    </section>
+
+    <footer class="footer-container">
+        <div class="container">
+            <p>© 2025 TeamFinder. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        if (window.fetch) {
+            loadScriptAsync("https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js");
+        }
+
+        function loadScriptAsync(src) {
+            const script = document.createElement("script");
+            script.src = src;
+            script.async = true;
+            document.head.appendChild(script);
+        }
+
+        function setCookie(name, value, days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + date.toGMTString();
+            document.cookie = name + "=" + value + "; " + expires + "; path=/";
+        }
+
+        window.onload = function() {
+            setCookie("userVisited", "true", 30);
+        };
+    </script>
+
+    <script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        if (typeof window.gtag === 'undefined') {
+            document.write('<script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"><\/script>');
+        }
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
